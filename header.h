@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
+    #include <stdio_ext.h>
 typedef struct node{
   int data;
   struct node *link;
 }slist;
 
 typedef enum{
-  success,failure
+  success,failure,failalloc
 }status;
 
 status  insert_first(slist ** head,int data);
@@ -22,3 +23,7 @@ status delete_elemet(slist **head,int data);
 int get_nth_node(slist*head,int n,int *data);
 status find_middle(slist *head,int *mid);
 void print_list(slist *head);
+void swap_node(slist **head);
+void sort_list(slist **head);
+void remove_duplicate(slist **head);
+

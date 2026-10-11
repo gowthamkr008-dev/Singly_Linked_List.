@@ -7,7 +7,7 @@ int main(){
   int data;
   int g_data;
     int n;
-  printf("1.Insert first\n2.Insert last\n3.Insert after\n4.Insert before\n5.Delete list\n6.Delete first\n7.Delete last\n8.Delete element\n9.Insert nth node\n10.Find node\n11.Print list\n12.Find middle\n0.Exit\nEnter choice: ");
+  printf("1.Insert first\n2.Insert last\n3.Insert after\n4.Insert before\n5.Delete list\n6.Delete first\n7.Delete last\n8.Delete element\n9.Insert nth node\n10.Find node\n11.Print list\n12.Find middle\n13.get nth node\n0.Exit\nEnter choice: ");
   while(1){
     scanf("%d",&choice);
     switch(choice)
@@ -16,6 +16,7 @@ int main(){
       printf("Enter data to insert first: ");
       scanf("%d",&data);
       if(insert_first(&head,data) ==failure){
+        puts("Allocation failed");
         return -1;
       }
       break;
@@ -25,6 +26,7 @@ int main(){
       printf("Enter data to insert last: ");
       scanf("%d",&data);
       if(insert_last(&head,data) == failure){
+        puts("Allocation failed");
         return -1;
       }
       break;
@@ -36,7 +38,7 @@ int main(){
       printf("Enter a data need to insert: ");
       scanf("%d",&data);
       if(insert_after(&head,g_data,data) == failure){
-        return -1;
+        puts("Data not found or allocation failed");
       }
       break;
 
@@ -47,28 +49,28 @@ int main(){
       printf("Enter a data you need to insert: ");
       scanf("%d",&data);
       if(insert_before(&head,g_data,data)==failure){
-        return -1;
+       puts("Allocation failed or data not found");
       }
       break;
 
 
       case 5://delete list
       if(delete_list(&head)==failure){
-        return -1;
+        puts("List empty");
       }
       break;
 
 
       case 6://delete first
       if(delete_first(&head)==failure){
-        return -1;
+        puts("List empty");
       }
       break;
 
 
       case 7://delete last
       if(delete_last(&head)==failure){
-        return -1;
+       puts("List empty");
       }
       break;
 
@@ -76,7 +78,7 @@ int main(){
       printf("Enter a data you need to delete: ");
       scanf("%d",&data);
       if(delete_elemet(&head,data)== failure){
-        printf("List is emptyor data nor found\n");
+        printf("List is empty data not found\n");
       }
 
 
@@ -110,7 +112,7 @@ int main(){
        if(find_middle(head,&res) == failure){
        printf("list is empty\n");
        }else{
-        printf("Middle node is  %d",res);
+        printf("Middle node is  %d\n",res);
        }
        break;
 
@@ -121,9 +123,21 @@ int main(){
        if(get_nth_node(head,n,&data)==1){
         printf("last %d node is data is %d",n,data);
        }else{
-  printf("last %d node is data is %d",n,data);
+        printf("Position not found\n");
        }
 
+       break;
+
+       case 14:
+       swap_node(&head);
+       break;
+
+       case 15:
+       sort_list(&head);
+       break;
+
+       case 16:
+       remove_duplicate(&head);
        break;
 
 

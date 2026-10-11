@@ -6,7 +6,7 @@ src := $(wildcard *.c)
 obj := $(patsubst %.c,%.o,$(src))
 
 # Default target
-calc.out: $(obj)
+a.out: $(obj)
 	gcc -o $@ $^
 
 # Compile each C file into an object file

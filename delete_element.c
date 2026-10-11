@@ -13,7 +13,6 @@ status delete_elemet(slist **head,int data){
   slist *temp = *head;
   while(temp->link != NULL){
     if(temp->link->data == data){
-      printf("dup");
       slist *del =temp->link;
       temp->link = temp->link->link;
       free(del);
