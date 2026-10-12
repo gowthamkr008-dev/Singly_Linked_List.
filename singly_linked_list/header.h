@@ -26,4 +26,5 @@ void print_list(slist *head);
 void swap_node(slist **head);
 void sort_list(slist **head);
 void remove_duplicate(slist **head);
+void reverse_list(slist **head);
 

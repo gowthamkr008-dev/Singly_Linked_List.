@@ -140,6 +140,11 @@ int main(){
        remove_duplicate(&head);
        break;
 
+       case 17:
+
+       reverse_list(&head);
+       break;
+
 
 
       default://exit the loop

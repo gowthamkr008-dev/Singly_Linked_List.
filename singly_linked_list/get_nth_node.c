@@ -10,7 +10,7 @@ int  get_nth_node(slist*head,int n,int *data){
     i++;
     head = head->link;
   }
-  int j=1;
+  int j = 1;
   while(temp != head){
     if(j == n){
       *data = temp->data;
