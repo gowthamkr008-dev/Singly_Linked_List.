@@ -12,6 +12,17 @@ void swap_node(slist **temp){
   (*temp)->link = sc;
 
   }
+
+
+  /*
+    slist *s = temp->link;
+      temp->link =temp->link->link;
+      slist *st =temp->link->link;
+      temp->link->link = s;
+      s->link = st;
+  
+  
+  */
   //   *head = (*head)->link;
   // temp->link = (*head)->link;
   // (*head)->link = temp;
