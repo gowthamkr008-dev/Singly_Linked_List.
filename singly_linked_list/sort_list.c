@@ -13,30 +13,27 @@ void sort_list(slist **head){
   }
 int k=0;
 
-for(int j = 0;j < i;j++){
+for(int j = 1;j < i;j++){
   temp = *head;
   while(temp->link->link != NULL){
-    // if(temp!= NULL &&temp->link != NULL){
-    // printf("before swap %d %d\n",temp->data,temp->link->data);
-    // }
-    if(temp->data > temp->link->data){
-      // printf("swap\n");
+//    1 10 1 20 1 30 1 40 1 50 1 60
+
+    if( (temp!= NULL && temp->link!= NULL)   &&(temp->data > temp->link->data) ){
+      // printf("Compared data %d and %d\n",temp->data,temp->link->data);
       slist *s = temp->link;
       temp->link =temp->link->link;
       slist *st =temp->link->link;
       temp->link->link = s;
       s->link = st;
-
+ 
+      // printf("swaped data %d and %d\n",temp->data,temp->link->data);
     
-  //      slist *sc = temp;
+  //slist *sc = temp;
   // temp = temp->link;
   // sc->link = temp->link;
   // temp->link = sc;
     
     }
-    // if(temp!= NULL &&temp->link != NULL){
-    //   printf("After swap %d %d\n",temp->data,temp->link->data);
-    // } 
     temp = temp->link;
 }
 print_list(*head);

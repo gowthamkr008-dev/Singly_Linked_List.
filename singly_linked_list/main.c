@@ -7,7 +7,7 @@ int main(){
   int data;
   int g_data;
     int n;
-  printf("1.Insert first\n2.Insert last\n3.Insert after\n4.Insert before\n5.Delete list\n6.Delete first\n7.Delete last\n8.Delete element\n9.Insert nth node\n10.Find node\n11.Print list\n12.Find middle\n13.get nth node\n0.Exit\nEnter choice: ");
+  printf("1.Insert first\n2.Insert last\n3.Insert after\n4.Insert before\n5.Delete list\n6.Delete first\n7.Delete last\n8.Delete element\n9.Insert nth node\n10.Find node\n11.Print list\n12.Find middle\n13.get nth node\n16.Remove duplicate\n0.Exit\nEnter choice: ");
   while(1){
     scanf("%d",&choice);
     switch(choice)
@@ -141,7 +141,6 @@ int main(){
        break;
 
        case 17:
-
        reverse_list(&head);
        break;
 

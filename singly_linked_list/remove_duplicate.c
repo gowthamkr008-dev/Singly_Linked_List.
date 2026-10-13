@@ -4,21 +4,26 @@ void remove_duplicate(slist **head){
   if(*head  == NULL){
     return ;
   }
-
-  slist *temp = *head;
-  slist *sctemp = *head;
-  int i=0;
-  while(sctemp->link != NULL){
-    temp = *head;
-    while(temp->link != NULL){
-      printf("%d ",i++);
-      if(sctemp->data == temp->data){
-        delete_elemet(head,temp->data);
+  if( (*head)->link == NULL){
+    return ;
+  }
+  slist *org = *head;
+  while(org!= NULL){
+    slist *dup = org->link;
+    slist *prev = org;
+    while(dup != NULL){
+      if(org->data == dup->data){
+        slist *temp = dup;
+        prev ->link=dup->link;
+        dup = dup->link;
+        free(temp);
+      }else{
+        prev =dup;
+        dup = dup->link;
+      }
     }
 
-    temp = temp->link;
-  }
-  sctemp = sctemp->link;
 
-}
+    org = org->link;
+  }
 }

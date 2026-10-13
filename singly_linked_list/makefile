@@ -15,7 +15,7 @@ a.out: $(obj)
 
 # Remove object files and executable
 clean:
-	rm -f $(obj) calc.out
+	rm -f $(obj) a.out
 
 .PHONY: clean
 
